@@ -52,13 +52,17 @@ namespace Zakharchenko_IKM621b_3_project
             this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdSave = new System.Windows.Forms.SaveFileDialog();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
+            this.dgwOpen = new System.Windows.Forms.DataGridView();
+            this.bSearch = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 53);
+            this.label1.Location = new System.Drawing.Point(110, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -66,7 +70,7 @@ namespace Zakharchenko_IKM621b_3_project
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(320, 127);
+            this.bStart.Location = new System.Drawing.Point(113, 100);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(75, 23);
             this.bStart.TabIndex = 1;
@@ -76,7 +80,7 @@ namespace Zakharchenko_IKM621b_3_project
             // 
             // tbInput
             // 
-            this.tbInput.Location = new System.Drawing.Point(320, 200);
+            this.tbInput.Location = new System.Drawing.Point(113, 141);
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(100, 20);
             this.tbInput.TabIndex = 2;
@@ -224,11 +228,39 @@ namespace Zakharchenko_IKM621b_3_project
             this.ofdOpen.FileName = "openFileDialog1";
             this.ofdOpen.Filter = "файлы задания|*.tskf";
             // 
+            // dgwOpen
+            // 
+            this.dgwOpen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwOpen.Location = new System.Drawing.Point(376, 70);
+            this.dgwOpen.Name = "dgwOpen";
+            this.dgwOpen.Size = new System.Drawing.Size(343, 150);
+            this.dgwOpen.TabIndex = 4;
+            // 
+            // bSearch
+            // 
+            this.bSearch.Location = new System.Drawing.Point(376, 226);
+            this.bSearch.Name = "bSearch";
+            this.bSearch.Size = new System.Drawing.Size(75, 23);
+            this.bSearch.TabIndex = 5;
+            this.bSearch.Text = "Пошук";
+            this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(376, 255);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(100, 20);
+            this.tbSearch.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.bSearch);
+            this.Controls.Add(this.dgwOpen);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.bStart);
             this.Controls.Add(this.label1);
@@ -241,6 +273,7 @@ namespace Zakharchenko_IKM621b_3_project
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +303,9 @@ namespace Zakharchenko_IKM621b_3_project
         private System.Windows.Forms.ToolStripMenuItem проПрограмуToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfdSave;
         private System.Windows.Forms.OpenFileDialog ofdOpen;
+        private System.Windows.Forms.DataGridView dgwOpen;
+        private System.Windows.Forms.Button bSearch;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }
 
