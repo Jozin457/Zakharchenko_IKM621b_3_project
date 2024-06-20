@@ -13,6 +13,7 @@ namespace Zakharchenko_IKM621b_3_project
     public partial class Form1 : Form
     {
         private bool Mode; // Режим дозволу / заборони введення даних
+        private MajorWork MajorObject;
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +28,11 @@ namespace Zakharchenko_IKM621b_3_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MajorObject = new MajorWork();
             this.Mode = true;
+            About A = new About();
+            A.tAbout.Start();
+            A.ShowDialog();
         }
 
         private void bStart_Click(object sender, EventArgs e)
@@ -45,6 +50,9 @@ namespace Zakharchenko_IKM621b_3_project
                 tClock.Stop();
                 bStart.Text = "Пуск";// зміна тексту на кнопці на "Пуск"
                 this.Mode = true;
+                MajorObject.Write(tbInput.Text);// Запис даних у об'єкт
+                MajorObject.Task();// Обробка даних
+                label1.Text = MajorObject.Read();// Відображення результату
             }
         }
 
