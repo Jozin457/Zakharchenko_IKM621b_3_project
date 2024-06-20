@@ -16,15 +16,22 @@ namespace Zakharchenko_IKM621b_3_project
         {
             InitializeComponent();
         }
-
         private void tAbout_Tick(object sender, EventArgs e)
         {
             Close();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            if (progressBar1.Value < 100)
+            {
+                progressBar1.Value += 1;
+            }
+            timer1.Start();
         }
     }
 }
