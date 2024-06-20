@@ -39,7 +39,7 @@ namespace Zakharchenko_IKM621b_3_project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 51);
+            this.label1.Location = new System.Drawing.Point(317, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +47,7 @@ namespace Zakharchenko_IKM621b_3_project
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(320, 126);
+            this.bStart.Location = new System.Drawing.Point(320, 127);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(75, 23);
             this.bStart.TabIndex = 1;
@@ -78,6 +78,7 @@ namespace Zakharchenko_IKM621b_3_project
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

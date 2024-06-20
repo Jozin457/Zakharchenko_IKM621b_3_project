@@ -17,6 +17,7 @@ namespace Zakharchenko_IKM621b_3_project
         public Form1()
         {
             InitializeComponent();
+            MajorObject = new MajorWork();
         }
 
         private void tClock_Tick(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace Zakharchenko_IKM621b_3_project
         private void Form1_Load(object sender, EventArgs e)
         {
             MajorObject = new MajorWork();
+            MajorObject.SetTime();
             this.Mode = true;
             About A = new About();
             A.tAbout.Start();
@@ -72,6 +74,13 @@ namespace Zakharchenko_IKM621b_3_project
                 e.KeyChar = (char)0;
             }
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string s;
+            s = (System.DateTime.Now - MajorObject.GetTime()).ToString();
+            MessageBox.Show(s, "Час роботи програми"); // Виведення часу роботи програми і повідомлення "Час роботи програми" на екран
         }
     }
 }
