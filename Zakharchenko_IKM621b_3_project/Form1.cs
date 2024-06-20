@@ -31,6 +31,7 @@ namespace Zakharchenko_IKM621b_3_project
         {
             MajorObject = new MajorWork();
             MajorObject.SetTime();
+            MajorObject.Modify = false; // заборона запису
             this.Mode = true;
             About A = new About();
             A.tAbout.Start();
@@ -96,14 +97,7 @@ namespace Zakharchenko_IKM621b_3_project
             A.ShowDialog();
         }
 
-        private void зберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
-{
-                MessageBox.Show(sfdSave.FileName);
-            }
-        }
-
+    
         private void відкритиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ofdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файлу
@@ -129,6 +123,15 @@ namespace Zakharchenko_IKM621b_3_project
                 }
             }
             MessageBox.Show(disk, "Накопичувачі");
+        }
+
+        private void зберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sfdSave.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна збереження файлу
+            {
+                MajorObject.WriteSaveFileName(sfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл }
+            }
         }
     }
 }
